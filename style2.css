@@ -1,0 +1,123 @@
+.container {
+    margin-top: 50px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-option.darker {
+    filter: brightness(85%);
+    /* Adjust the brightness as needed */
+}
+
+body {
+    background-image: url('images/quizbg.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #eee;
+    /* Add padding to the container */
+}
+
+.quiz-container {
+    background-color: #33333393;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-option {
+    width: 100px;
+}
+
+
+
+.btn-primary,
+.btn-success {
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.custom-swal {
+    background-color: white;
+    color: #FAC344;
+    border: 2px solid #FAC344;
+}
+
+.swal-button {
+    background-color: #FAC344;
+    color: #222222;
+}
+
+.modal-content {
+    background-color: #222222;
+}

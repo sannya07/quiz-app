@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container {
+            margin-top: 50px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .btn-option.darker {
+            filter: brightness(85%); /* Adjust the brightness as needed */
+        }
+        body{
+             background-image: url('images/quizbg.png'); 
+            background-size:contain;
+            background-position: right;
+            background-repeat: no-repeat;
+            padding: 20px; /* Add padding to the container */ 
+        }
+  
+        .quiz-container {
+            background-color: #33333393;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+      
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-option {
+            width: 100px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #eee;
+        }
+
+        .btn-primary,
+        .btn-success {
+            font-size: 1.25rem;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover,
+        .btn-success:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .custom-swal {
+            background-color: white;
+            color: #FAC344;
+            border: 2px solid #FAC344;
+        }
+    
+        .swal-button {
+            background-color: #FAC344;
+            color: #222222;
+        }
+        .modal-content{
+            background-color: #222222;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex justify-content-center align-items-center vh-md-100">
+        <div class="container">
+            <div class="row">
+                <h2 class="fs-1">Quiz Game</h2>
+                <div class=" quiz-container column d-flex flex-column flex-md-row justify-content-center align-items-center text-center gap-5  ">
+                    <div>
+                        <img class="w-100 w-md-50" src="images/question.png" alt="">
+                    </div>
+                    <div class=" d-flex flex-column justify-content-center text-start gap-5 ">  
+                        <p class="fs-2" id="question"></p>
+                        <div id="options" class="options"></div>
+                        <button id="nextBtn" class="btn btn-primary mt-3">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+        <div class="modal fade" id="userInfoModal" tabindex="-1" aria-labelledby="userInfoModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="userInfoModalLabel">Enter Your Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form id="userInfoForm">
+                    <div class="mb-3">
+                    <label for="userName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="userName" required>
+                    </div>
+                    <div class="mb-3">
+                    <label for="userRollNo" class="form-label">Roll Number</label>
+                    <input type="text" class="form-control" id="userRollNo" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Start Quiz</button>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+  
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
+
