@@ -1,2 +1,2 @@
-# st-2-quiz-app
+# quiz-app
 Quiz App using Bootstrap and Javascript
